@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://drive.google.com/uc?authuser=0&id=1w-OStGxF1oCWETeVHDeBXtJV7-iWoR4t&export=download" type="text/css">
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link href="css/modern-business.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>EDITAR HOJA DE PARTES</title>
+</head>
+<body>
+<a class="btn btn-success" href="/hoja_de_parte">MENU HOJA DE PARTES</a>
+  <div class="text-center">
+    <h1 class="alert alert-danger">EDITAR</h1>
+  </div>
+  
+  <div class="container">
+  <form action="/hoja_de_parte/editar/{{hoja.id}}" method="POST">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">CONCEPTO</span>
+                  </div>
+                  <input value="{{hoja.concepto}}" type="text" name="concepto" id="concepto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+          </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">CANTIDAD</span>
+                    </div>
+                    <input value="{{hoja.cantidad}}" type="text" name="cantidad" id="cantidad" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">REPARACION</span>
+                      </div>
+                      <input value="{{hoja.reparacion}}"type="text" name="reparacion" id="reparacion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <div>
+                  <label for="idMECANICORESPONSABLE">Mecanico responsable</label>
+                </div>
+              </td>
+              <td>
+                <select name="mecanico_responsable_idMEC" id="mecanico_responsable_idMEC">
+                  @each(mecanico in mecanicos)
+                <option value="{{mecanico.id}}">{{mecanico.id}} - {{mecanico.nombre}}</option>
+                  @endeach
+                </select>
+              </td>
+          </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-danger" type="submit">EDITAR</button>
+  </form>
+  </div>
+</body>
+</html>

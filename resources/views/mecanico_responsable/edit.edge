@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://drive.google.com/uc?authuser=0&id=1w-OStGxF1oCWETeVHDeBXtJV7-iWoR4t&export=download" type="text/css">
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link href="css/modern-business.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>EDITAR MECANICO</title>
+</head>
+<body>
+  <a class="btn btn-success" href="/mecanico_responsable">MENU MECANICOS</a>
+  <div class="text-center">
+    <h1 class="alert alert-secondary" role="secondary">EDITAR MECANICO</h1>
+  </div>
+  <div class="container">
+  <form action="/mecanico_responsable/editar/{{mecanico.id}}" method="POST">
+    <table>
+        <tbody>
+          <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">NOMBRE</span>
+                    </div>
+                    <input value="{{mecanico.nombre}}" type="text" name="nombre" id="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">DIRECCION</span>
+                    </div>
+                    <input value="{{mecanico.direccion}}" type="text" name="direccion" id="direccion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">TELEFONO</span>
+                    </div>
+                    <input value="{{mecanico.tel}}" type="text" name="tel" id="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">COSTO POR HORA</span>
+                    </div>
+                    <input value="{{mecanico.costoxhora}}" type="text" name="costoxhora" id="costoxhora" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">CATEGORIA</span>
+                    </div>
+                    <input value="{{mecanico.categoria}}" type="text" name="categoria" id="categoria" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <button class="btn btn-secondary" type="submit">EDITAR</button>
+  </form>
+  </div>
+</body>
+</html>

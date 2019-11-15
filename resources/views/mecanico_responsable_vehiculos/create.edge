@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://drive.google.com/uc?authuser=0&id=1w-OStGxF1oCWETeVHDeBXtJV7-iWoR4t&export=download" type="text/css">
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link href="css/modern-business.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>CREAR MECANICO-VEHICULO</title>
+</head>
+<body>
+<a class="btn btn-success" href="/mecanico_vehiculo">MENU MECANICO-VEHICULO</a>
+  <div class="text-center">
+    <h1 class="alert alert-primary" role="primary">CREAR ASIGNACION</h1>
+    <br><br>
+  </div>
+  
+  <div class="container">
+    <form action="/mecanico_vehiculo/crear" method="POST">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">MECANICO</span>
+                </div>
+            </td>
+            <td>
+              <select name="mecanico_idMEC" id="mecanico_idMEC">
+                @each(mecanico in mecanicos)
+                  <option value="{{mecanico.id}}">{{mecanico.id}} - {{mecanico.nombre}}</option>
+                @endeach
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">VEHICULO</span>
+                </div>
+            </td>
+            <td>
+              <select name="vehiculo_idMATRICULA" id="vehiculo_idMATRICULA">
+                @each(vehiculo in vehiculos)
+                  <option value="{{vehiculo.id}}">{{vehiculo.id}} - {{vehiculo.modelo}}</option>
+                 @endeach
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" type="submit">AGREGAR</button>
+    </form>
+  </div>
+</body>
+</html>

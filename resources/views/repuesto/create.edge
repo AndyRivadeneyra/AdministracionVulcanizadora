@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://drive.google.com/uc?authuser=0&id=1w-OStGxF1oCWETeVHDeBXtJV7-iWoR4t&export=download" type="text/css">
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link href="css/modern-business.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>CREAR REFACCION</title>
+</head>
+<body>
+<a class="btn btn-success" href="/repuestos">MENU REFACCIONES</a>
+  <div class="text-center">
+    <h1 class="alert alert-warning" role="warning">AGREGAR REFACCION</h1>
+  </div>
+  
+  <div class="container">
+    <form action="/repuestos/crear" method="post">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">DESCRIPCION</span>
+                    </div>
+                    <input type="text" name="descripcion" id="descripcion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">COSTO UNITARIO</span>
+                    </div>
+                    <input type="text" name="costounit" id="costounit" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">PRECIO</span>
+                      </div>
+                      <input type="text" name="preciounit" id="preciounit" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-default">IMPORTE PARCIAL</span>
+                        </div>
+                        <input type="text" name="imp_parcial" id="imp_parcial" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div>
+                       <label for="idHOJADEPARTE"> ID hoja de partes </label>
+                    </div>
+                  </td>
+                  <td>
+                    <select name="hojadeparte_idHOJA" id="hojadeparte_idHOJA">
+                      @each(hoja in hojas)
+                        <option value="{{hoja.id}}">{{hoja.id}} - {{hoja.concepto}}</option>
+                      @endeach
+                    </select>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div>
+                       <label for="idMECANICODEPARTE"> Mecanico asignado </label>
+                    </div>
+                  </td>
+                  <td>
+                    <select name="hojadeparte_mecanicoresponsable_idMEC" id="hojadeparte_mecanicoresponsable_idMEC">
+                      @each(mecanico in mecanicos)
+                        <option value="{{mecanico.id}}">{{mecanico.id}} - {{mecanico.nombre}}</option>
+                      @endeach
+                    </select>
+                  </td>
+              </tr>
+        </tbody>
+      </table>
+      <button type="submit">Agregar</button>
+    </form>
+  </div>
+</body>
+</html>

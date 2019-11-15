@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://drive.google.com/uc?authuser=0&id=1w-OStGxF1oCWETeVHDeBXtJV7-iWoR4t&export=download" type="text/css">
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet" type="text/css">
+  <link href="css/modern-business.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>VEHICULOS</title>
+</head>
+  <body>
+    <div>
+      <nav class="text-center">
+          <div class="btn-group" role="group" aria-label="Basic example">
+              <a class="btn btn-success" href="/clientes">CLIENTES</a>
+              <a class="btn btn-success" href="/mecanico_responsable">MECANICOS</a>
+              <a class="btn btn-success" href="/repuestos">REFACCIONES</a>
+              <a class="btn btn-success" href="/factura">TRANSACCIONES</a>
+          </div>
+      </nav>
+      <div class="text-center">
+        <div>
+          <h1 class="alert alert-dark" role="dark">LISTA DE VEHICULOS</h1>
+          <a class="btn btn-dark"  href="/vehiculos/crear">CREAR VEHICULO</a>
+            <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="alert alert-info" role="info">ID</th>
+                      <th class="alert alert-info" role="info">Modelo</th>
+                      <th class="alert alert-info" role="info">Color</th>
+                      <th class="alert alert-info" role="info">Fecha</th>
+                      <th class="alert alert-info" role="info">Hora</th>
+                      <th class="alert alert-info" role="info">ID Cliente</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(vehiculo in vehiculos)
+                      <tr>
+                        <td>{{vehiculo.id}}</td>
+                        <td>{{vehiculo.modelo}}</td>
+                        <td>{{vehiculo.color}}</td>
+                        <td>{{vehiculo.fecha_ent}}</td>
+                        <td>{{vehiculo.hora_ent}}</td>
+                        <td>{{vehiculo.cliente_idrfc}}</td>
+                        <td>
+                          <li>
+                            <a class="btn btn-info" href="/vehiculos/editar/{{vehiculo.id}}">EDITAR</a>
+                          </li>
+                        </td>
+                        <td>
+                          <li>
+                            <a class="btn btn-danger" href="/vehiculos/eliminar/{{vehiculo.id}}">ELIMINAR</a>
+                          </li>
+                        </td>
+                        </td>
+                      </tr>
+                    @endeach
+                  </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
